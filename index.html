@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Yolanda Mbande | Developer Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="sky" aria-hidden="true"></div>
+<div class="floor" aria-hidden="true"></div>
+<canvas id="fx" aria-hidden="true"></canvas>
+<div class="glow" id="glow" aria-hidden="true"></div>
+
+<!-- Fixed Background Hologram -->
+<div class="fixed-holo-bg" id="holo" role="button" tabindex="0" aria-label="Say hi to the hologram">
+  <div class="say" id="say">Hi, I’m Yolanda 👋</div>
+  <div class="rig" id="rig">
+    <div class="scan"></div>
+    <div class="face" id="face">
+      <div class="brow l"></div><div class="brow r"></div>
+      <div class="gl" id="gl"><div class="lens"><div class="pupil"></div></div><div class="br"></div><div class="lens"><div class="pupil"></div></div></div>
+      <div class="mouth"></div>
+    </div>
+  </div>
+</div>
+
+<header>
+  <a href="#home" class="logo">YOLANDA<span>.dev</span></a>
+  <nav id="nav" aria-label="Main">
+    <ul>
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="hr">
+    <button class="bugbtn" id="bugBtn" type="button" aria-pressed="false">🐛 Bug Mode: OFF</button>
+    <div class="soc">
+      <a href="https://github.com/YolandaMbande" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/yolanda-mbande/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+    <button id="menu" type="button" aria-label="Menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</header>
+
+<div class="landing-container">
+  
+  <!-- SECTION 1: HERO -->
+  <section id="home" class="hero-section">
+    <div class="card">
+      <div class="bar"><i></i><i></i><i></i><em>~/yolanda/portfolio</em></div>
+      <div class="badge"><b></b>ONLINE | Cape Town <span id="clock"></span></div>
+      <h1 class="name" id="name" data-t="Yolanda Mbande">Yolanda Mbande</h1>
+      <p class="type" aria-label="Cape Town-based developer. Professional problem solver. Occasional bug creator."><span class="pre" aria-hidden="true">&gt;</span><span id="tw" aria-hidden="true"></span><i class="caret" aria-hidden="true"></i></p>
+      <p class="sub">Building web apps and fixing what breaks. Open to junior roles, available immediately.</p>
+      <div class="btns">
+        <a href="#about" class="btn main" data-grin>Explore My Work <i class="fa-solid fa-arrow-down"></i></a>
+        <a href="#resume" class="btn ghost" data-grin>Resume</a>
+      </div>
+      <div class="tech"><span>JavaScript</span><span>PHP</span><span>Python</span><span>SQL</span><span>Node.js</span><span>Laravel</span></div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: ABOUT ME -->
+  <section id="about" class="about-section">
+    <div class="section-header">
+      <h1>About Me</h1>
+      <p>A little about the person behind the code, the projects, the ideas, and the occasional battle with a stubborn bug.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="photo-card">
+        <img src="assets/about_me.jpg" alt="Yolanda Mbande">
+      </div>
+
+      <div class="bio-card">
+        <h2>UI/UX Designer & Web Developer</h2>
+        <p class="bio-text">
+          Hi, my name's Yolanda Mbande. I am a creative software developer based in Cape Town, focused on building efficient, user-focused web applications using PHP, Laravel, Java, HTML, and modern JavaScript frameworks. I have experience across the full software development cycle, from building and debugging systems to developing clean, reliable solutions for complex requirements.
+        </p>
+
+        <div class="details-grid">
+          <div class="detail-item"><i class="fa-solid fa-chevron-right"></i> <strong>Age:</strong> <span>23</span></div>
+          <div class="detail-item"><i class="fa-solid fa-chevron-right"></i> <strong>Diploma:</strong> <span>Computer Science</span></div>
+          <div class="detail-item"><i class="fa-solid fa-chevron-right"></i> <strong>Phone:</strong> <span>065 711 0159</span></div>
+          <div class="detail-item"><i class="fa-solid fa-chevron-right"></i> <strong>Email:</strong> <span>y_mbande@icloud.com</span></div>
+          <div class="detail-item"><i class="fa-solid fa-chevron-right"></i> <strong>City:</strong> <span>Cape Town, SA</span></div>
+          <div class="detail-item"><i class="fa-solid fa-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></div>
+        </div>
+
+        <div class="fanfic-note">
+          <i class="fa-solid fa-pen-nib"></i>
+          <span>If I'm not writing code, I'm probably writing fanfiction. Developer by day, fanfiction writer by... also day. 📖</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Skills Container -->
+    <div class="skills-container">
+      <h2>Skills</h2>
+      <p class="skills-subtext">Technologies I work with, tools I use, and skills I've picked up along the way.</p>
+
+      <div class="skills-grid">
+        <div class="skill-item">
+          <div class="skill-info"><span>HTML</span><span>100%</span></div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 100%;"></div></div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-info"><span>PHP</span><span>80%</span></div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 80%;"></div></div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-info"><span>CSS</span><span>90%</span></div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 90%;"></div></div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-info"><span>LARAVEL FRAMEWORK</span><span>90%</span></div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 90%;"></div></div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-info"><span>JAVASCRIPT</span><span>75%</span></div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 75%;"></div></div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-info"><span>SQL / MYSQL</span><span>90%</span></div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 90%;"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">2</div>
+        <div class="stat-label">Years Coding</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">5+</div>
+        <div class="stat-label">Technologies</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">3+</div>
+        <div class="stat-label">Projects Built</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">2025</div>
+        <div class="stat-label">Graduated</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: RESUME -->
+  <section id="resume" class="resume-section">
+    <div class="section-header">
+      <h1>Resume</h1>
+      <p>A quick look at where I've been, what I've learned, and the experience that's helped me grow from a Computer Science student into a Software Developer.</p>
+    </div>
+
+    <div class="resume-grid">
+      <div>
+        <h2 class="section-column-title"><i class="fa-solid fa-user-gear"></i> Summary</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>YOLANDA MBANDE</h3>
+            <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1rem;">
+              Software Developer based in Cape Town with a Diploma in Computer Science and hands-on experience building and maintaining web applications. I enjoy solving problems with code, learning new technologies, and turning ideas into useful software.
+            </p>
+            <ul style="list-style: none; padding-left: 0;">
+              <li><i class="fa-solid fa-location-dot" style="color: var(--c);"></i> Cape Town, South Africa</li>
+              <li><i class="fa-solid fa-envelope" style="color: var(--c);"></i> y_mbande@icloud.com</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 class="section-column-title" style="margin-top: 2rem;"><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>DIPLOMA IN COMPUTER SCIENCE</h3>
+            <div class="date-badge">Graduated 2024 / 2025</div>
+            <div class="company">Tshwane University of Technology</div>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">
+              Studied software development, database programming, internet technologies, systems analysis, and other core areas of Computer Science.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="section-column-title"><i class="fa-solid fa-briefcase"></i> Professional Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>JUNIOR SOFTWARE DEVELOPER</h3>
+            <div class="date-badge">Sept 2025 – Apr 2026</div>
+            <div class="company">Spacebar Solutions (Pty) Ltd</div>
+            <ul>
+              <li>Developed and maintained web applications using PHP, Java, and dynamic web logic.</li>
+              <li>Worked on application functionality, root-cause debugging, and ongoing improvements.</li>
+              <li>Collaborated on software development tasks and contributed to maintaining existing applications.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <h3>SOFTWARE DEVELOPER INTERN</h3>
+            <div class="date-badge">Aug 2024 – Aug 2025</div>
+            <div class="company">Teambix (Pty) Ltd</div>
+            <ul>
+              <li>Worked on the AddressDox platform using Laravel, Livewire, and Tailwind CSS.</li>
+              <li>Developed and maintained web application features and database validation.</li>
+              <li>Worked with PHP, MySQL, JavaScript, Blade, and related development tools.</li>
+              <li>Participated in debugging, testing, and improving application functionality.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <h3>INTERNET SECURITY & DATABASE TUTOR</h3>
+            <div class="date-badge">March 2023 – November 2023</div>
+            <div class="company">Tshwane University of Technology (TUT)</div>
+            <ul>
+              <li>Explained technical concepts and assisted students with coursework and practical lab exercises.</li>
+              <li>Helped students troubleshoot programming and database-related challenges.</li>
+              <li>Supported students in developing their understanding of security principles and database concepts.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hire-cta-container">
+      <a href="#contact" class="hire-btn">
+        <i class="fa-solid fa-paper-plane"></i> Hire Me
+      </a>
+    </div>
+  </section>
+
+  <!-- SECTION 4: PORTFOLIO -->
+  <section id="portfolio" class="portfolio-section">
+    <div class="section-header">
+      <h1>Portfolio</h1>
+      <p>A few things I’ve built, worked on, and learned from along the way.</p>
+    </div>
+
+    <div class="filters">
+      <button class="filter-btn active" onclick="filterProjects('all', this)">All</button>
+      <button class="filter-btn" onclick="filterProjects('web', this)">Web</button>
+      <button class="filter-btn" onclick="filterProjects('app', this)">Applications</button>
+      <button class="filter-btn" onclick="filterProjects('branding', this)">In Progress</button>
+    </div>
+
+    <p class="project-count" id="projectCount" aria-live="polite">SHOWING 06 PROJECTS</p>
+    <div class="portfolio-scroll-controls">
+  <span class="portfolio-scroll-hint">
+    SCROLL TO EXPLORE
+    <i class="fa-solid fa-arrow-right"></i>
+  </span>
+
+  <div class="portfolio-arrows">
+    <button type="button" class="portfolio-arrow" id="projectsPrev" aria-label="Previous projects">
+      <i class="fa-solid fa-arrow-left"></i>
+    </button>
+
+    <button type="button" class="portfolio-arrow" id="projectsNext" aria-label="Next projects">
+      <i class="fa-solid fa-arrow-right"></i>
+    </button>
+  </div>
+</div>
+    <div class="portfolio-grid" id="projectsTrack">
+      <!-- Block Puzzle Game -->
+      <div class="project-card" data-category="app">
+        <div class="card-img-wrap"><span class="project-number">01 / 06</span><span class="project-category">Application</span>
+          <img src="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" alt="Block Puzzle Game" onerror="this.src='https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=600'">
+        </div>
+        <div class="project-body">
+          <h3 class="project-title">Block Puzzle Game</h3>
+          <p class="project-desc">Interactive grid puzzle game designed to cure boredom and test spatial reasoning.</p>
+          <div class="project-tech"><span>JavaScript</span><span>Game UI</span></div><div class="project-links">
+            <button class="icon-btn" title="Quick Preview" onclick="openPreview('details/portfolio-details-4.html')"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
+            <a href="https://block-puzzle-amber.vercel.app/" target="_blank" class="icon-btn" title="Live Site"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nestashots -->
+      <div class="project-card" data-category="web">
+        <div class="card-img-wrap"><span class="project-number">02 / 06</span><span class="project-category">Website</span>
+          <img src="assets/img/masonry-portfolio/masonry-portfolio-2.png" alt="Nestashots" onerror="this.src='https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=600'">
+        </div>
+        <div class="project-body">
+          <h3 class="project-title">Nestashots</h3>
+          <p class="project-desc">A photography portfolio showcase highlighting creative visual media production and booking options.</p>
+          <div class="project-tech"><span>HTML</span><span>CSS</span><span>JavaScript</span></div><div class="project-links">
+            <button class="icon-btn" title="Quick Preview" onclick="openPreview('details/portfolio-details-1.html')"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
+            <a href="https://yolandambande.github.io/nestashots/index.html" target="_blank" class="icon-btn" title="Live Site"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unsaid AI -->
+      <div class="project-card" data-category="app">
+        <div class="card-img-wrap"><span class="project-number">03 / 06</span><span class="project-category">Application</span>
+          <img src="assets/img/masonry-portfolio/masonry-portfolio-7.png" alt="Unsaid AI" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600'">
+        </div>
+        <div class="project-body">
+          <h3 class="project-title">Unsaid AI</h3>
+          <p class="project-desc">Conversational companion providing private interactions and voice processing.</p>
+          <div class="project-tech"><span>AI</span><span>Web App</span></div><div class="project-links">
+            <button class="icon-btn" title="Quick Preview" onclick="openPreview('details/portfolio-details-5.html')"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
+            <a href="unsaid-details.html" class="icon-btn" title="View Details"><i class="fa-solid fa-link"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social Links Card -->
+      <div class="project-card" data-category="web">
+        <div class="card-img-wrap"><span class="project-number">04 / 06</span><span class="project-category">Website</span>
+          <img src="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" alt="Social Links Card" onerror="this.src='https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=600'">
+        </div>
+        <div class="project-body">
+          <h3 class="project-title">Social Links Card</h3>
+          <p class="project-desc">Minimalist personal aggregator card for social media bio integration and contact shortcuts.</p>
+          <div class="project-tech"><span>HTML</span><span>CSS</span></div><div class="project-links">
+            <button class="icon-btn" title="Quick Preview" onclick="openPreview('details/portfolio-details-2.html')"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
+            <a href="https://yolanda-links.vercel.app/" target="_blank" class="icon-btn" title="Live Site"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Easy Booking Website -->
+      <div class="project-card" data-category="web">
+        <div class="card-img-wrap"><span class="project-number">05 / 06</span><span class="project-category">Website</span>
+          <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" alt="Easy Booking Website" onerror="this.src='https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=600'">
+        </div>
+        <div class="project-body">
+          <h3 class="project-title">Easy Booking Website</h3>
+          <p class="project-desc">Comprehensive event booking and management system designed for event organizers and guests.</p>
+          <div class="project-tech"><span>PHP</span><span>MySQL</span></div><div class="project-links">
+            <button class="icon-btn" title="Quick Preview" onclick="openPreview('details/portfolio-details-3.html')"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
+            <a href="portfolio-details.html" class="icon-btn" title="View Details"><i class="fa-solid fa-link"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- In Progress Project -->
+      <div class="project-card" data-category="branding">
+        <div class="card-img-wrap"><span class="project-number">06 / 06</span><span class="project-category">In Progress</span>
+          <img src="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" alt="Branding Project" onerror="this.src='https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=600'">
+        </div>
+        <div class="project-body">
+          <h3 class="project-title">Branding Concept</h3>
+          <p class="project-desc">Visual identity, custom logo concepts, and UI assets currently in active development.</p>
+          <div class="project-tech"><span>UI/UX</span><span>Design</span></div><div class="project-links">
+            <a href="portfolio-details.html" class="icon-btn" title="View Details"><i class="fa-solid fa-link"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SECTION 5: CONTACT / FINAL ACT -->
+  <section id="contact" class="contact-section contact-v2">
+    <div class="contact-ticker" aria-hidden="true"><div class="contact-ticker-track">LET'S MAKE SOMETHING IMPOSSIBLE <span>✳</span> GOT AN IDEA? <span>✳</span> LET'S MAKE SOMETHING IMPOSSIBLE <span>✳</span> GOT AN IDEA? <span>✳</span> LET'S MAKE SOMETHING IMPOSSIBLE <span>✳</span> GOT AN IDEA? <span>✳</span></div></div>
+    <div class="contact-v2-intro">
+      <p class="contact-kicker"><span class="contact-kicker-dot"></span> 05 / FINAL TRANSMISSION <span class="contact-kicker-line"></span> OPEN FOR COLLABORATIONS</p>
+      <h1 class="contact-mega" aria-label="Let's make something happen."><span>LET'S MAKE</span><span class="contact-outline" data-word="SOMETHING">SOMETHING</span><span>HAPPEN<span class="contact-period">.</span></span></h1>
+      <div class="contact-intro-bottom"><p>Got a wild idea, a role worth discussing, or a project that needs a developer? This is where the good stuff starts.</p><a class="contact-jump" href="#contact-form" aria-label="Jump to contact form"><i class="fa-solid fa-arrow-down"></i></a></div>
+    </div>
+    <div class="contact-v2-grid">
+      <div class="contact-v2-left">
+        <div class="contact-orbit" aria-hidden="true">
+          <div class="contact-orbit-ring ring-one"></div><div class="contact-orbit-ring ring-two"></div><div class="contact-orbit-ring ring-three"></div>
+          <div class="contact-orbit-core"><i class="fa-solid fa-paper-plane"></i></div>
+          <span class="orbit-tag tag-one">IDEAS_</span><span class="orbit-tag tag-two">BUILD_</span><span class="orbit-tag tag-three">CONNECT_</span>
+          <div class="orbit-cross cross-one">+</div><div class="orbit-cross cross-two">+</div>
+        </div>
+        <div class="contact-v2-links">
+          <p class="contact-kicker">DIRECT LINES // NO MIDDLEMAN</p>
+          <a class="contact-v2-link" href="mailto:y_mbande@icloud.com"><span class="contact-link-icon"><i class="fa-regular fa-envelope"></i></span><span><small>DROP AN EMAIL</small><strong>y_mbande@icloud.com</strong></span><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          <a class="contact-v2-link" href="tel:+27657110159"><span class="contact-link-icon"><i class="fa-solid fa-phone"></i></span><span><small>GIVE ME A CALL</small><strong>+27 65 711 0159</strong></span><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          <div class="contact-location"><i class="fa-solid fa-location-crosshairs"></i> BASED IN CAPE TOWN, SOUTH AFRICA <span class="contact-live-dot"></span></div>
+        </div>
+      </div>
+      <div class="contact-v2-right">
+        <div class="contact-terminal-bar"><div class="terminal-dots"><i></i><i></i><i></i></div><span>new_message.exe</span><span class="terminal-encrypted">● SECURE CHANNEL</span></div>
+        <div class="contact-terminal-inner">
+          <p class="contact-terminal-heading"><span class="terminal-cursor-prefix">&gt;_</span> INITIALIZE CONVERSATION<span class="terminal-blink">_</span></p>
+          <p class="contact-terminal-sub">Fill in the details. I'll take it from here.</p>
+          <form id="contact-form" class="contact-form">
+            <div class="contact-field"><label for="contact-name">01 / YOUR NAME</label><input id="contact-name" name="name" type="text" placeholder="What should I call you?" autocomplete="name" required></div>
+            <div class="contact-field"><label for="contact-email">02 / EMAIL ADDRESS</label><input id="contact-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required></div>
+            <div class="contact-field full"><label for="contact-subject">03 / WHAT'S THE MISSION?</label><input id="contact-subject" name="subject" type="text" placeholder="Project, opportunity, collaboration..." required></div>
+            <div class="contact-field full"><label for="contact-message">04 / YOUR MESSAGE</label><textarea id="contact-message" name="message" rows="6" placeholder="Tell me everything..." required></textarea></div>
+            <div class="full"><button class="contact-submit" id="contact-submit" type="submit"><span>SEND TRANSMISSION</span><i class="fa-solid fa-arrow-up-right-from-square"></i></button></div>
+            <p class="contact-status full" id="contact-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+        <div class="contact-terminal-footer"><span>STATUS: <b>READY TO RECEIVE</b></span><span>YOLANDA.DEV // 2026</span></div>
+      </div>
+    </div>
+    <div class="contact-endline"><span>YOU MADE IT TO THE END.</span><a href="#home">BACK TO THE TOP <i class="fa-solid fa-arrow-up"></i></a><span>NOW LET'S BUILD SOMETHING.</span></div>
+  </section>
+
+</div>
+
+<footer>
+  © 2026 Yolanda Mbande. All Rights Reserved.
+</footer>
+
+<!-- Modal Preview -->
+<div id="previewModal" class="preview-modal">
+  <div class="preview-content">
+    <button class="preview-close" onclick="closePreview()">&times;</button>
+    <iframe id="previewFrame" src=""></iframe>
+  </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+
+<script src="script.js" defer></script>
+</body>
+</html>
